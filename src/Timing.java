@@ -1,6 +1,6 @@
-import java.sql.Time;
+import java.io.Serializable;
 
-public class Timing {
+public class Timing implements Serializable {
     private Time start;
     private Time end;
 
