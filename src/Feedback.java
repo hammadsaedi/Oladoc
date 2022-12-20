@@ -1,4 +1,6 @@
-public class Feedback {
+import java.io.Serializable;
+
+public class Feedback implements Serializable {
     private int rating;
     private String response;
 
