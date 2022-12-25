@@ -1,4 +1,6 @@
-public class Patient extends Person implements SignIn {
+import java.io.Serializable;
+
+public class Patient extends Person implements SignIn, Serializable {
     private String id;
     private String password;
     private String bloodGroup;
