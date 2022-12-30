@@ -1,22 +1,32 @@
-public class Patient extends Person {
-    private String patientId;
+public class Patient extends Person implements SignIn {
+    private String id;
+    private String password;
     private String bloodGroup;
     private double balance;
 
     public Patient(String firstName, String lastName, int age, String gender, String number, String cnic, String email,
-            Address address, String patientId, String bloodGroup, double balance) {
+            Address address, String id, String password, String bloodGroup, double balance) {
         super(firstName, lastName, age, gender, number, cnic, email, address);
-        this.patientId = patientId;
+        this.id = id;
+        this.password = password;
         this.bloodGroup = bloodGroup;
         this.balance = balance;
     }
 
-    public String getPatientId() {
-        return patientId;
+    public String getId() {
+        return id;
     }
 
-    public void setPatientId(String patientId) {
-        this.patientId = patientId;
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getBloodGroup() {
@@ -37,7 +47,7 @@ public class Patient extends Person {
 
     @Override
     public String toString() {
-        return super.toString() + "Patient [Patient Id: " + patientId + ", Blood Group: " + bloodGroup + ", Balance: "
+        return super.toString() + "Patient [Patient Id: " + id + ", Blood Group: " + bloodGroup + ", Balance: "
                 + balance + "]";
     }
 }

@@ -1,4 +1,6 @@
-public class Doctor extends Person {
+public class Doctor extends Person implements SignIn {
+    private String id;
+    private String password;
     private String specialization;
     private Timing timing;
     private Hospital hospital;
@@ -6,11 +8,14 @@ public class Doctor extends Person {
     private double hourlyCharges;
     private double balance;
 
-    public Doctor(String firstName, String lastName, int age, String gender, String number, String cnic, String email,
+    public Doctor(String id, String password, String firstName, String lastName, int age, String gender, String number,
+            String cnic, String email,
             Address address,
             String specialization, Timing timing, Hospital hospital, double experience, double hourlyCharges,
             double balance) {
         super(firstName, lastName, age, gender, number, cnic, email, address);
+        this.id = id;
+        this.password = password;
         this.specialization = specialization;
         this.timing = timing;
         this.hospital = hospital;
@@ -65,6 +70,22 @@ public class Doctor extends Person {
 
     public void setBalance(double balance) {
         this.balance = balance;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override
