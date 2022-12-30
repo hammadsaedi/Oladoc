@@ -4,16 +4,19 @@ public class Doctor extends Person {
     private Hospital hospital;
     private double experience;
     private double hourlyCharges;
+    private double balance;
 
     public Doctor(String firstName, String lastName, int age, String gender, String number, String cnic, String email,
             Address address,
-            String specialization, Timing timing, Hospital hospital, double experience, double hourlyCharges) {
+            String specialization, Timing timing, Hospital hospital, double experience, double hourlyCharges,
+            double balance) {
         super(firstName, lastName, age, gender, number, cnic, email, address);
         this.specialization = specialization;
         this.timing = timing;
         this.hospital = hospital;
         this.experience = experience;
         this.hourlyCharges = hourlyCharges;
+        this.balance = balance;
     }
 
     public String getSpecialization() {
@@ -56,10 +59,19 @@ public class Doctor extends Person {
         this.hourlyCharges = hourlyCharges;
     }
 
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
     @Override
     public String toString() {
         return super.toString() + "Doctor [Specialization: " + specialization + ", Timing: " + timing + ", Hospital: "
                 + hospital
                 + ", Experience: " + experience + ", Hourly Charges: " + hourlyCharges + "]";
     }
+
 }
