@@ -1,4 +1,6 @@
-public class Address {
+import java.io.Serializable;
+
+public class Address implements Serializable {
     private int houseNo;
     private int streetNo;
     private String area;
