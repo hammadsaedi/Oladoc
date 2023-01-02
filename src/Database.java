@@ -1,6 +1,7 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Database {
+public class Database implements Serializable {
     private Admin admin;
     private ArrayList<Doctor> doctors;
     private ArrayList<Patient> patients;
@@ -8,6 +9,9 @@ public class Database {
 
     public Database(Admin admin) {
         this.admin = admin;
+        doctors = new ArrayList<>();
+        patients = new ArrayList<>();
+        appointments = new ArrayList<>();
     }
 
     public Doctor registerDoctor(String id, String password, String firstName, String lastName, int age, String gender,
