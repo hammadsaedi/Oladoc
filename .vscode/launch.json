@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "Oladoc_b1556b67"
+        },
+        {
+            "type": "java",
+            "name": "Launch GuiTester",
+            "request": "launch",
+            "mainClass": "GuiTester",
+            "projectName": "Oladoc_b1556b67"
+        },
+        {
+            "type": "java",
+            "name": "Launch Test",
+            "request": "launch",
+            "mainClass": "Test",
+            "projectName": "Oladoc_b1556b67"
+        },
+        {
+            "type": "java",
             "name": "Launch Person",
             "request": "launch",
             "mainClass": "Person",

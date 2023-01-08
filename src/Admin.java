@@ -1,4 +1,6 @@
-public class Admin {
+import java.io.Serializable;
+
+public class Admin implements Serializable, SignIn {
     private String id;
     private String password;
 
