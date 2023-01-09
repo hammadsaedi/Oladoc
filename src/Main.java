@@ -73,8 +73,19 @@ public class Main extends Object {
     }
 
     // Make Appointment (By Patient)
+    void makeAppointment(Doctor doctor, Date date, Time time, Mode mode) {
+        try {
+            db.makeAppointment((Patient) person, doctor, date, time, Status.PENDING, mode);
+        } catch (ClassCastException exp) {
+            throw new RuntimeException("Patient is not logged in.");
+        }
+        updateDatabase();
+    }
 
     // Server and Make Recept
+    void servePatient(Appointment appointment) {
+
+    }
 
     // Give Feedback
 

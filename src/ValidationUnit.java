@@ -14,4 +14,8 @@ public class ValidationUnit {
     public static boolean isValidPassword(String password) {
         return true;
     }
+
+    public static boolean isOverlapping(Time first, Time second) {
+        return true;
+    }
 }

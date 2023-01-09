@@ -60,4 +60,20 @@ public class Database implements Serializable {
         }
         return null;
     }
+
+    public void makeAppointment(Patient patient, Doctor doctor, Date date, Time time, Status status, Mode mode) {
+        for (int i = 0; i < appointments.size(); i++) {
+            Appointment pointer = appointments.get(i);
+            if (pointer.getDoctor().equals(doctor) && pointer.getDate().equals(date)
+                    && ValidationUnit.isOverlapping(time, pointer.getTime()))
+                throw new RuntimeException("Timing Overlapped");
+        }
+        // is Doctor is available at that time?
+        Appointment appointment = new Appointment(patient, doctor, date, time, status, mode);
+        appointments.add(appointment);
+    }
+
+    public void inspectPatient(Appointment appointment) {
+
+    }
 }
