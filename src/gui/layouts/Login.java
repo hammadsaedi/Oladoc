@@ -9,25 +9,22 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Login extends JFrame implements ActionListener {
-    JPanel option,login;
-    JLabel usernameLabel,passwordLabel;
-    customField usernameField,passwordField;
-    customButton loginButton,home;
-    JRadioButton doctor,patient,admin;
-    ButtonGroup loginGroup;
+    JPanel load;
+    private JLabel usernameLabel, passwordLabel;
+    private customField usernameField, passwordField;
+    private customButton loginButton, home;
+    private JRadioButton doctor, patient, admin;
+    private ButtonGroup loginGroup;
 
-    public Login(){
-        // Set up the frame
-        setTitle("Login Form");
-        setSize(300, 300);
-        setLayout(new BorderLayout());
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setVisible(true);
+    public Login() {
+
+        load = new JPanel(new BorderLayout());
+        load.setSize(400,400);
 
         // Create a panel to hold the login form components
-        login = new JPanel(new GridLayout(3,2));
+        JPanel login = new JPanel(new GridLayout(3, 2));
 
-        add(login,BorderLayout.CENTER);
+        load.add(login, BorderLayout.CENTER);
 
         // Add the username label and text field to the panel
         usernameLabel = new JLabel("Username:");
@@ -50,7 +47,7 @@ public class Login extends JFrame implements ActionListener {
         login.add(home);
 
         //Radio Button Panel
-        option = new JPanel(new GridLayout(1,3));
+        JPanel option = new JPanel(new GridLayout(1, 3));
 
         loginGroup = new ButtonGroup();
         admin = new JRadioButton("Admin");
@@ -60,28 +57,28 @@ public class Login extends JFrame implements ActionListener {
         patient = new JRadioButton("Patient");
         loginGroup.add(patient);
 
-        option.add(admin);option.add(doctor);option.add(patient);
+        option.add(admin);
+        option.add(doctor);
+        option.add(patient);
 
-        add(option,BorderLayout.NORTH);
+        load.add(option, BorderLayout.NORTH);
 
     }
 
-    public void actionPerformed(ActionEvent e){
+    public void actionPerformed(ActionEvent e) {
         String username = usernameField.getText();
         String password = passwordField.getText();
-        if(e.getActionCommand().equals("Login")){
-            if(admin.isSelected()){
+        if (e.getActionCommand().equals("Login")) {
+            if (admin.isSelected()) {
 
-            }
-            else if(doctor.isSelected()){
+            } else if (doctor.isSelected()) {
 
-            }
-            else if(patient.isSelected()){
+            } else if (patient.isSelected()) {
 
             }
         }
         //redirect to home frame
-        else if(e.getActionCommand().equals("Home")){
+        else if (e.getActionCommand().equals("Home")) {
 
         }
     }
