@@ -1,3 +1,5 @@
+package app;
+
 import java.io.Serializable;
 
 public class Patient extends Person implements SignIn, Serializable {

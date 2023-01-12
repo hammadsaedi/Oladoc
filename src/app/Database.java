@@ -1,5 +1,9 @@
+package app;
+
 import java.io.Serializable;
 import java.util.ArrayList;
+
+import ValidationUnit;
 
 public class Database implements Serializable {
     private Admin admin;

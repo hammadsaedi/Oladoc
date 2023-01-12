@@ -1,3 +1,5 @@
+import app.Time;
+
 public class ValidationUnit {
     public static boolean isValidCnic(String cnic) {
         return true;

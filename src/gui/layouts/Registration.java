@@ -9,20 +9,26 @@ import java.text.NumberFormat;
 
 public class Registration extends JFrame implements ActionListener {
     public JPanel load;
+    private Main app;
 
-    private JLabel lFirstName,lLastName,lAge,lGender,lNumber,lCnic,lEmail,lHouseNo,lStreetNo,lArea,lCity,lCountry,lSpecialization,lExperience,lHourlyCharge,lDoctorBalance,lStartTime,lEndTime,lHospitalName,lBloodGroup,lPatientBalance;
+    private JLabel lFirstName, lLastName, lAge, lGender, lNumber, lCnic, lEmail, lHouseNo, lStreetNo, lArea, lCity,
+            lCountry, lSpecialization, lExperience, lHourlyCharge, lDoctorBalance, lStartTime, lEndTime, lHospitalName,
+            lBloodGroup, lPatientBalance;
 
-    private JFormattedTextField tFirstName,tLastName,tAge,tGender,tNumber,tCnic,tEmail,tHouseNo,tStreetNo,tArea,tCity,tCountry,tSpecialization,tExperience,tHourlyCharge,tDoctorBalance,tStartTime,tEndTime,tHospitalName,tBloodGroup,tPatientBalance;
+    private JFormattedTextField tFirstName, tLastName, tAge, tGender, tNumber, tCnic, tEmail, tHouseNo, tStreetNo,
+            tArea, tCity, tCountry, tSpecialization, tExperience, tHourlyCharge, tDoctorBalance, tStartTime, tEndTime,
+            tHospitalName, tBloodGroup, tPatientBalance;
 
     private ButtonGroup loginGroup;
-    private JRadioButton doctor,patient;
-    private JPanel option,formPanel,footer;
+    private JRadioButton doctor, patient;
+    private JPanel option, formPanel, footer;
 
-    private JButton submit,home;
+    private JButton submit, home;
+
     public Registration() {
         load = new JPanel(new BorderLayout());
 
-        formPanel = new JPanel(new GridLayout(19,2));
+        formPanel = new JPanel(new GridLayout(19, 2));
 
         lFirstName = new JLabel("First Name: ");
         lLastName = new JLabel("Last Name: ");
@@ -45,7 +51,6 @@ public class Registration extends JFrame implements ActionListener {
         lHospitalName = new JLabel("Hospital Name: ");
         lBloodGroup = new JLabel("Blood Group: ");
         lPatientBalance = new JLabel("Patient's Balance: ");
-
 
         tFirstName = new JFormattedTextField();
         tLastName = new JFormattedTextField();
@@ -71,8 +76,8 @@ public class Registration extends JFrame implements ActionListener {
 
         load.add(formPanel);
 
-        //Radio Buttons
-        option = new JPanel(new GridLayout(1,2));
+        // Radio Buttons
+        option = new JPanel(new GridLayout(1, 2));
         loginGroup = new ButtonGroup();
         doctor = new JRadioButton("Doctor");
         loginGroup.add(doctor);
@@ -87,41 +92,99 @@ public class Registration extends JFrame implements ActionListener {
         patient.addActionListener(this);
         doctor.addActionListener(this);
 
-
-        //footer
+        // footer
         submit = new JButton("Submit");
         home = new JButton("Home");
-        footer = new JPanel(new GridLayout(1,2));
-        footer.add(submit);footer.add(home);
-        submit.addActionListener(this);home.addActionListener(this);
+        footer = new JPanel(new GridLayout(1, 2));
+        footer.add(submit);
+        footer.add(home);
+        submit.addActionListener(this);
+        home.addActionListener(this);
 
-        load.add(footer,BorderLayout.SOUTH);load.add(option,BorderLayout.NORTH);load.add(bar1,BorderLayout.CENTER);
+        load.add(footer, BorderLayout.SOUTH);
+        load.add(option, BorderLayout.NORTH);
+        load.add(bar1, BorderLayout.CENTER);
+
+        submit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent e) {
+                // Main app = new Main();
+                // mainRunner.app
+            }
+        });
     }
 
-
-
-    public void actionPerformed(ActionEvent e){
-        if(e.getSource() == patient || e.getSource() == doctor){
-            if(doctor.isSelected()){
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == patient || e.getSource() == doctor) {
+            if (doctor.isSelected()) {
                 formPanel.removeAll();
-                formPanel.add(lFirstName);formPanel.add(tFirstName);formPanel.add(lLastName);formPanel.add(tLastName);formPanel.add(lAge);formPanel.add(tAge);formPanel.add(lGender);formPanel.add(tGender);formPanel.add(lNumber);formPanel.add(tNumber);formPanel.add(lCnic);formPanel.add(tCnic);formPanel.add(lEmail);formPanel.add(tEmail);formPanel.add(lHouseNo);formPanel.add(tHouseNo);formPanel.add(lStreetNo);formPanel.add(tStreetNo);formPanel.add(lArea);formPanel.add(tArea);formPanel.add(lCity);formPanel.add(tCity);formPanel.add(lCountry);formPanel.add(tCountry);formPanel.add(lSpecialization);formPanel.add(tSpecialization);formPanel.add(lExperience);formPanel.add(tExperience);formPanel.add(lHourlyCharge);formPanel.add(tHourlyCharge);formPanel.add(lDoctorBalance);formPanel.add(tDoctorBalance);formPanel.add(lStartTime);formPanel.add(tStartTime);formPanel.add(lEndTime);formPanel.add(tEndTime);formPanel.add(lHospitalName);formPanel.add(tHospitalName);
+                formPanel.add(lFirstName);
+                formPanel.add(tFirstName);
+                formPanel.add(lLastName);
+                formPanel.add(tLastName);
+                formPanel.add(lAge);
+                formPanel.add(tAge);
+                formPanel.add(lGender);
+                formPanel.add(tGender);
+                formPanel.add(lNumber);
+                formPanel.add(tNumber);
+                formPanel.add(lCnic);
+                formPanel.add(tCnic);
+                formPanel.add(lEmail);
+                formPanel.add(tEmail);
+                formPanel.add(lHouseNo);
+                formPanel.add(tHouseNo);
+                formPanel.add(lStreetNo);
+                formPanel.add(tStreetNo);
+                formPanel.add(lArea);
+                formPanel.add(tArea);
+                formPanel.add(lCity);
+                formPanel.add(tCity);
+                formPanel.add(lCountry);
+                formPanel.add(tCountry);
+                formPanel.add(lSpecialization);
+                formPanel.add(tSpecialization);
+                formPanel.add(lExperience);
+                formPanel.add(tExperience);
+                formPanel.add(lHourlyCharge);
+                formPanel.add(tHourlyCharge);
+                formPanel.add(lDoctorBalance);
+                formPanel.add(tDoctorBalance);
+                formPanel.add(lStartTime);
+                formPanel.add(tStartTime);
+                formPanel.add(lEndTime);
+                formPanel.add(tEndTime);
+                formPanel.add(lHospitalName);
+                formPanel.add(tHospitalName);
             }
 
-            if(patient.isSelected()){
+            if (patient.isSelected()) {
                 formPanel.removeAll();
-                formPanel.add(lFirstName);formPanel.add(tFirstName);
-                formPanel.add(lLastName);formPanel.add(tLastName);
-                formPanel.add(lAge);formPanel.add(tAge);
-                formPanel.add(lGender);formPanel.add(tGender);
-                formPanel.add(lNumber);formPanel.add(tNumber);
-                formPanel.add(lCnic);formPanel.add(tCnic);
-                formPanel.add(lEmail);formPanel.add(tEmail);
-                formPanel.add(lHouseNo);formPanel.add(tHouseNo);
-                formPanel.add(lStreetNo);formPanel.add(tStreetNo);
-                formPanel.add(lArea);formPanel.add(tArea);
-                formPanel.add(lCity);formPanel.add(tCity);
-                formPanel.add(lCountry);formPanel.add(tCountry);
-                formPanel.add(lBloodGroup);formPanel.add(tBloodGroup);
+                formPanel.add(lFirstName);
+                formPanel.add(tFirstName);
+                formPanel.add(lLastName);
+                formPanel.add(tLastName);
+                formPanel.add(lAge);
+                formPanel.add(tAge);
+                formPanel.add(lGender);
+                formPanel.add(tGender);
+                formPanel.add(lNumber);
+                formPanel.add(tNumber);
+                formPanel.add(lCnic);
+                formPanel.add(tCnic);
+                formPanel.add(lEmail);
+                formPanel.add(tEmail);
+                formPanel.add(lHouseNo);
+                formPanel.add(tHouseNo);
+                formPanel.add(lStreetNo);
+                formPanel.add(tStreetNo);
+                formPanel.add(lArea);
+                formPanel.add(tArea);
+                formPanel.add(lCity);
+                formPanel.add(tCity);
+                formPanel.add(lCountry);
+                formPanel.add(tCountry);
+                formPanel.add(lBloodGroup);
+                formPanel.add(tBloodGroup);
                 formPanel.add(lPatientBalance);
                 formPanel.add(tPatientBalance);
             }
