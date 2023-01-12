@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "app.App",
+            "projectName": "Oladoc_b1556b67"
+        },
+        {
+            "type": "java",
+            "name": "Launch mainRunner",
+            "request": "launch",
+            "mainClass": "app.mainRunner",
+            "projectName": "Oladoc_b1556b67"
+        },
+        {
+            "type": "java",
             "name": "Launch mainRunner",
             "request": "launch",
             "mainClass": "mainRunner",

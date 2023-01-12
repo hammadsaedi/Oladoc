@@ -3,13 +3,43 @@ package app;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-import ValidationUnit;
-
 public class Database implements Serializable {
     private Admin admin;
     private ArrayList<Doctor> doctors;
     private ArrayList<Patient> patients;
     private ArrayList<Appointment> appointments;
+
+    public Admin getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(Admin admin) {
+        this.admin = admin;
+    }
+
+    public ArrayList<Doctor> getDoctors() {
+        return doctors;
+    }
+
+    public void setDoctors(ArrayList<Doctor> doctors) {
+        this.doctors = doctors;
+    }
+
+    public ArrayList<Patient> getPatients() {
+        return patients;
+    }
+
+    public void setPatients(ArrayList<Patient> patients) {
+        this.patients = patients;
+    }
+
+    public ArrayList<Appointment> getAppointments() {
+        return appointments;
+    }
+
+    public void setAppointments(ArrayList<Appointment> appointments) {
+        this.appointments = appointments;
+    }
 
     public Database(Admin admin) {
         this.admin = admin;
@@ -79,5 +109,11 @@ public class Database implements Serializable {
 
     public void inspectPatient(Appointment appointment) {
 
+    }
+
+    @Override
+    public String toString() {
+        return "Database [admin=" + admin + ", doctors=" + doctors + ", patients=" + patients + ", appointments="
+                + appointments + "]";
     }
 }
