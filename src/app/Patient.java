@@ -1,12 +1,14 @@
 package app;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Patient extends Person implements SignIn, Serializable {
     private String id;
     private String password;
     private String bloodGroup;
     private double balance;
+    private ArrayList<Receipt> receipts;
 
     public Patient(String firstName, String lastName, int age, String gender, String number, String cnic, String email,
             Address address, String id, String password, String bloodGroup, double balance) {
@@ -15,6 +17,7 @@ public class Patient extends Person implements SignIn, Serializable {
         this.password = password;
         this.bloodGroup = bloodGroup;
         this.balance = balance;
+        receipts = new ArrayList<>();
     }
 
     public String getId() {
@@ -47,6 +50,14 @@ public class Patient extends Person implements SignIn, Serializable {
 
     public void setBalance(double balance) {
         this.balance = balance;
+    }
+
+    public void addReceipt(Receipt receipt) {
+        receipts.add(receipt);
+    }
+
+    public ArrayList<Receipt> getReceipt() {
+        return receipts;
     }
 
     @Override

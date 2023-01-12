@@ -11,6 +11,10 @@ public class Hospital implements Serializable {
         this.address = address;
     }
 
+    public Hospital(String name) {
+        this.name = name;
+    }
+
     public String getName() {
         return name;
     }

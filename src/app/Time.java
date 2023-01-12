@@ -7,10 +7,14 @@ public class Time implements Serializable {
     private int minute;
     private int hour;
 
-    public Time(int second, int minute, int hour, int day, int month, int year) {
+    public Time(int second, int minute, int hour) {
         this.second = second;
         this.minute = minute;
         this.hour = hour;
+    }
+
+    public Time(int hour) {
+
     }
 
     public int getSecond() {

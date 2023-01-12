@@ -8,9 +8,9 @@ public class Receipt implements Serializable {
     private boolean isPaid;
 
     // amount has to be calculated on base of appointment
-    public Receipt(Appointment appointment) {
+    public Receipt(Appointment appointment, double amount) {
         this.appointment = appointment;
-        this.amount = 100;
+        this.amount = amount;
     }
 
     public Appointment getAppointment() {
