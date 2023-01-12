@@ -6,14 +6,15 @@ import gui.layouts.Login;
 import gui.layouts.Registration;
 
 import javax.swing.*;
-
 import java.awt.*;
 import java.io.IOException;
 
 public class mainRunner {
-    public Main app = new Main("db");
 
     public static void main(String[] args) throws IOException {
+        // BackEndInterface app = new BackEndInterface("db");
+        BackEndInterface app = new BackEndInterface(new Database(new Admin("admin",
+                "admin")), "db");
         JFrame frame = new JFrame();
 
         frame.setSize(600, 600);
@@ -24,10 +25,12 @@ public class mainRunner {
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
 
-        frame.add(new Registration().load, BorderLayout.CENTER);
+        frame.add(new Registration(app).load, BorderLayout.CENTER);
         frame.add(new Header().load, BorderLayout.NORTH);
+
         // frame.add(new FeedbackForm().load,BorderLayout.CENTER);
         frame.repaint();
         frame.revalidate();
+
     }
 }

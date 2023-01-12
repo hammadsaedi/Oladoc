@@ -1,8 +1,9 @@
 package app;
 
 import java.io.IOException;
+import java.io.Serializable;
 
-public class App {
+public class App implements Serializable {
     public static void main(String[] args) throws IOException {
         // Database db = new Database(new Admin("admin", "admin"));
         // Main app = new Main(db, "db");
@@ -16,9 +17,11 @@ public class App {
         // "Pakistan")),
         // 1, 50, 10000);
 
-        Main app = new Main("db");
-        app.loginDoctor("DOC-1", "faoq");
-        app.printUser();
+        BackEndInterface app = new BackEndInterface("db");
+        app.loginPatient("amir", "amir12345");
+        app.printDb();
+        // app.loginDoctor("DOC-1", "faoq");
+        // app.printUser();
         // app.setTiming();
         // app.printUser();
 
