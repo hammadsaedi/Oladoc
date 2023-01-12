@@ -10,7 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class FeedbackForm extends JFrame implements ActionListener {
-    JPanel panel;
+    JPanel load;
     JLabel ratingLabel,reviewLabel;
     JTextArea reviewField;
     JSlider ratingSlider;
@@ -24,24 +24,24 @@ public class FeedbackForm extends JFrame implements ActionListener {
         setVisible(true);
 
         // Create a panel to hold the feedback form components
-        panel = new JPanel();
-        add(panel);
+        load = new JPanel();
+        add(load);
 
         // Add the review label and text area to the panel
         reviewLabel = new JLabel("Review:");
-        panel.add(reviewLabel);
+        load.add(reviewLabel);
         reviewField = new JTextArea(5, 30);
-        panel.add(reviewField);
+        load.add(reviewField);
 
         // Add the rating label and slider to the panel
         ratingLabel = new JLabel("Rating (out of 5):");
-        panel.add(ratingLabel);
+        load.add(ratingLabel);
         ratingSlider = new JSlider(1, 5, 3);
-        panel.add(ratingSlider);
+        load.add(ratingSlider);
 
         // Add the submit button to the panel
         submitButton = new JButton("Submit");
-        panel.add(submitButton);
+        load.add(submitButton);
 
         // Add an action listener to the submit button
         submitButton.addActionListener(this);
@@ -50,5 +50,9 @@ public class FeedbackForm extends JFrame implements ActionListener {
         if(e.getActionCommand().equals("Submit")){
 
         }
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Hello World");
     }
 }
