@@ -1,9 +1,12 @@
 import java.io.*;
 
-public class FileOperations<T> {
+public class FileOperations<T> implements Serializable {
 
     String path;
     File file;
+
+    public FileOperations() {
+    }
 
     public FileOperations(String path) {
         this.path = path + ".ser";
