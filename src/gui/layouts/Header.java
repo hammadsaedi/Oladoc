@@ -8,15 +8,16 @@ import java.io.File;
 import java.io.IOException;
 
 
-public class hellow extends JFrame {
-    JPanel p1;
-    public hellow() throws IOException {
+public class Header extends JFrame {
+    public JPanel load;
+    public Header() throws IOException {
 
-        p1 = new JPanel(new FlowLayout());
+        load = new JPanel(new FlowLayout());
 
         BufferedImage myPicture = ImageIO.read(new File("F:/Oladoc/OLADOC1.png"));
         JLabel picLabel = new JLabel(new ImageIcon(myPicture));
-        p1.add(picLabel);
+        load.add(picLabel);
 
     }
 }
+

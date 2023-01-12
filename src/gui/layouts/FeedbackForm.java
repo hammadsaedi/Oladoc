@@ -10,7 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class FeedbackForm extends JFrame implements ActionListener {
-    JPanel load;
+    public JPanel load;
     JLabel ratingLabel,reviewLabel;
     JTextArea reviewField;
     JSlider ratingSlider;
@@ -21,7 +21,6 @@ public class FeedbackForm extends JFrame implements ActionListener {
         setTitle("Feedback Form");
         setSize(400, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setVisible(true);
 
         // Create a panel to hold the feedback form components
         load = new JPanel();
