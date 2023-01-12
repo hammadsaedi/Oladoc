@@ -1,6 +1,6 @@
 import java.io.IOException;
 
-public class Main extends Object {
+public class Main {
     boolean isAdmin;
     private Person person;
     private Database db;

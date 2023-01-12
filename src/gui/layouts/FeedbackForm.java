@@ -6,11 +6,12 @@ import javax.swing.JLabel;
 import javax.swing.JTextArea;
 import javax.swing.JSlider;
 import javax.swing.JButton;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class FeedbackForm extends JFrame implements ActionListener {
-    JPanel load;
+    public JPanel load;
     JLabel ratingLabel,reviewLabel;
     JTextArea reviewField;
     JSlider ratingSlider;
@@ -19,13 +20,12 @@ public class FeedbackForm extends JFrame implements ActionListener {
     public FeedbackForm() {
         // Set up the frame
         setTitle("Feedback Form");
-        setSize(400, 400);
+        setLayout(new BorderLayout());
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setVisible(true);
 
         // Create a panel to hold the feedback form components
         load = new JPanel();
-        add(load);
+        add(load,BorderLayout.CENTER);
 
         // Add the review label and text area to the panel
         reviewLabel = new JLabel("Review:");
@@ -37,6 +37,12 @@ public class FeedbackForm extends JFrame implements ActionListener {
         ratingLabel = new JLabel("Rating (out of 5):");
         load.add(ratingLabel);
         ratingSlider = new JSlider(1, 5, 3);
+        ratingSlider.setPaintTicks(true);
+        ratingSlider.setMinorTickSpacing(1);
+        ratingSlider.setPaintTrack(true);
+        ratingSlider.setMajorTickSpacing(1);
+        ratingSlider.setSnapToTicks(true);
+        ratingSlider.setPaintLabels(true);
         load.add(ratingSlider);
 
         // Add the submit button to the panel

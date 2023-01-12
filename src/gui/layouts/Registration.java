@@ -1,20 +1,14 @@
 package gui.layouts;
 
-import gui.TimePicker;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Time;
 import java.text.DateFormat;
 import java.text.NumberFormat;
-import java.time.LocalTime;
-import java.time.ZoneId;
-import java.util.Calendar;
 
 public class Registration extends JFrame implements ActionListener {
-    JPanel load;
+    public JPanel load;
 
     private JLabel lFirstName,lLastName,lAge,lGender,lNumber,lCnic,lEmail,lHouseNo,lStreetNo,lArea,lCity,lCountry,lSpecialization,lExperience,lHourlyCharge,lDoctorBalance,lStartTime,lEndTime,lHospitalName,lBloodGroup,lPatientBalance;
 
@@ -27,6 +21,7 @@ public class Registration extends JFrame implements ActionListener {
     private JButton submit,home;
     public Registration() {
         load = new JPanel(new BorderLayout());
+
         formPanel = new JPanel(new GridLayout(19,2));
 
         lFirstName = new JLabel("First Name: ");
@@ -72,6 +67,7 @@ public class Registration extends JFrame implements ActionListener {
         tEndTime = new JFormattedTextField(DateFormat.getTimeInstance());
         tHospitalName = new JFormattedTextField();
         tBloodGroup = new JFormattedTextField();
+        tPatientBalance = new JFormattedTextField(NumberFormat.getIntegerInstance());
 
         load.add(formPanel);
 
@@ -105,7 +101,7 @@ public class Registration extends JFrame implements ActionListener {
 
 
     public void actionPerformed(ActionEvent e){
-        if(e.getActionCommand().equals("Patient") || e.getActionCommand().equals("Doctor")){
+        if(e.getSource() == patient || e.getSource() == doctor){
             if(doctor.isSelected()){
                 formPanel.removeAll();
                 formPanel.add(lFirstName);formPanel.add(tFirstName);formPanel.add(lLastName);formPanel.add(tLastName);formPanel.add(lAge);formPanel.add(tAge);formPanel.add(lGender);formPanel.add(tGender);formPanel.add(lNumber);formPanel.add(tNumber);formPanel.add(lCnic);formPanel.add(tCnic);formPanel.add(lEmail);formPanel.add(tEmail);formPanel.add(lHouseNo);formPanel.add(tHouseNo);formPanel.add(lStreetNo);formPanel.add(tStreetNo);formPanel.add(lArea);formPanel.add(tArea);formPanel.add(lCity);formPanel.add(tCity);formPanel.add(lCountry);formPanel.add(tCountry);formPanel.add(lSpecialization);formPanel.add(tSpecialization);formPanel.add(lExperience);formPanel.add(tExperience);formPanel.add(lHourlyCharge);formPanel.add(tHourlyCharge);formPanel.add(lDoctorBalance);formPanel.add(tDoctorBalance);formPanel.add(lStartTime);formPanel.add(tStartTime);formPanel.add(lEndTime);formPanel.add(tEndTime);formPanel.add(lHospitalName);formPanel.add(tHospitalName);
@@ -113,10 +109,24 @@ public class Registration extends JFrame implements ActionListener {
 
             if(patient.isSelected()){
                 formPanel.removeAll();
-                formPanel.add(lFirstName);formPanel.add(tFirstName);formPanel.add(lLastName);formPanel.add(tLastName);formPanel.add(lAge);formPanel.add(tAge);formPanel.add(lGender);formPanel.add(tGender);formPanel.add(lNumber);formPanel.add(tNumber);formPanel.add(lCnic);formPanel.add(tCnic);formPanel.add(lEmail);formPanel.add(tEmail);formPanel.add(lHouseNo);formPanel.add(tHouseNo);formPanel.add(lStreetNo);formPanel.add(tStreetNo);formPanel.add(lArea);formPanel.add(tArea);formPanel.add(lCity);formPanel.add(tCity);formPanel.add(lCountry);formPanel.add(tCountry);formPanel.add(lBloodGroup);formPanel.add(tBloodGroup);formPanel.add(lPatientBalance);formPanel.add(tPatientBalance);
+                formPanel.add(lFirstName);formPanel.add(tFirstName);
+                formPanel.add(lLastName);formPanel.add(tLastName);
+                formPanel.add(lAge);formPanel.add(tAge);
+                formPanel.add(lGender);formPanel.add(tGender);
+                formPanel.add(lNumber);formPanel.add(tNumber);
+                formPanel.add(lCnic);formPanel.add(tCnic);
+                formPanel.add(lEmail);formPanel.add(tEmail);
+                formPanel.add(lHouseNo);formPanel.add(tHouseNo);
+                formPanel.add(lStreetNo);formPanel.add(tStreetNo);
+                formPanel.add(lArea);formPanel.add(tArea);
+                formPanel.add(lCity);formPanel.add(tCity);
+                formPanel.add(lCountry);formPanel.add(tCountry);
+                formPanel.add(lBloodGroup);formPanel.add(tBloodGroup);
+                formPanel.add(lPatientBalance);
+                formPanel.add(tPatientBalance);
             }
-            formPanel.revalidate();
             formPanel.repaint();
+            formPanel.revalidate();
         }
     }
 }

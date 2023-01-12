@@ -9,7 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Login extends JFrame implements ActionListener {
-    JPanel load;
+    public JPanel load;
     private JLabel usernameLabel, passwordLabel;
     private customField usernameField, passwordField;
     private customButton loginButton, home;
@@ -19,7 +19,7 @@ public class Login extends JFrame implements ActionListener {
     public Login() {
 
         load = new JPanel(new BorderLayout());
-        load.setSize(400,400);
+//        load.setSize(400,400);
 
         // Create a panel to hold the login form components
         JPanel login = new JPanel(new GridLayout(3, 2));
