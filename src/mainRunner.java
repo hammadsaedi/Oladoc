@@ -19,7 +19,7 @@ public class mainRunner {
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
 
-//        frame.add(new Login().load,BorderLayout.CENTER);
+//        frame.add(new Registration().load,BorderLayout.CENTER);
         frame.add(new Header().load,BorderLayout.NORTH);
         frame.add(new FeedbackForm().load,BorderLayout.CENTER);
         frame.repaint();
