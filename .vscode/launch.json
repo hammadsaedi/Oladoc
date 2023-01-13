@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch MainUI",
+            "request": "launch",
+            "mainClass": "gui.MainUI",
+            "projectName": "Oladoc_b1556b67"
+        },
+        {
+            "type": "java",
             "name": "Launch App",
             "request": "launch",
             "mainClass": "app.App",
