@@ -1,4 +1,4 @@
-package gui;
+package gui.layouts;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -12,7 +12,7 @@ import java.awt.event.ActionListener;
 
 public class FeedbackForm extends JFrame implements ActionListener {
     public JPanel load;
-    JLabel ratingLabel, reviewLabel;
+    JLabel ratingLabel,reviewLabel;
     JTextArea reviewField;
     JSlider ratingSlider;
     JButton submitButton;
@@ -25,7 +25,7 @@ public class FeedbackForm extends JFrame implements ActionListener {
 
         // Create a panel to hold the feedback form components
         load = new JPanel();
-        add(load, BorderLayout.CENTER);
+        add(load,BorderLayout.CENTER);
 
         // Add the review label and text area to the panel
         reviewLabel = new JLabel("Review:");
@@ -52,9 +52,8 @@ public class FeedbackForm extends JFrame implements ActionListener {
         // Add an action listener to the submit button
         submitButton.addActionListener(this);
     }
-
-    public void actionPerformed(ActionEvent e) {
-        if (e.getActionCommand().equals("Submit")) {
+    public void actionPerformed(ActionEvent e){
+        if(e.getActionCommand().equals("Submit")){
 
         }
     }
