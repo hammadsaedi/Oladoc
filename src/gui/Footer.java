@@ -7,11 +7,12 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-public class Header extends JFrame {
+public class Footer extends JFrame {
     public JPanel load;
 
-    public Header() throws IOException {
+    private JButton back, home;
 
+    public Footer() throws IOException {
         load = new JPanel(new FlowLayout());
 
         BufferedImage myPicture = ImageIO.read(new File("OLADOC1.png"));

@@ -1,6 +1,8 @@
-package gui.layouts;
+package gui;
 
 import javax.swing.*;
+
+import app.*;
 import java.awt.*;
 import java.text.DateFormat;
 import java.text.NumberFormat;
@@ -8,17 +10,21 @@ import java.text.NumberFormat;
 public class Profile extends JFrame {
     public JPanel load;
 
-    private JLabel lFirstName,lLastName,lAge,lGender,lNumber,lCnic,lEmail,lHouseNo,lStreetNo,lArea,lCity,lCountry,lSpecialization,lExperience,lHourlyCharge,lDoctorBalance,lStartTime,lEndTime,lHospitalName,lBloodGroup,lPatientBalance;
+    private JLabel lFirstName, lLastName, lAge, lGender, lNumber, lCnic, lEmail, lHouseNo, lStreetNo, lArea, lCity,
+            lCountry, lSpecialization, lExperience, lHourlyCharge, lDoctorBalance, lStartTime, lEndTime, lHospitalName,
+            lBloodGroup, lPatientBalance;
 
-    private JFormattedTextField tFirstName,tLastName,tAge,tGender,tNumber,tCnic,tEmail,tHouseNo,tStreetNo,tArea,tCity,tCountry,tSpecialization,tExperience,tHourlyCharge,tDoctorBalance,tStartTime,tEndTime,tHospitalName,tBloodGroup,tPatientBalance;
+    private JFormattedTextField tFirstName, tLastName, tAge, tGender, tNumber, tCnic, tEmail, tHouseNo, tStreetNo,
+            tArea, tCity, tCountry, tSpecialization, tExperience, tHourlyCharge, tDoctorBalance, tStartTime, tEndTime,
+            tHospitalName, tBloodGroup, tPatientBalance;
 
-   private JButton updateProfileDoctor,updateProfilePatient,home;
+    private JButton updateProfileDoctor, updateProfilePatient, home;
 
-   private JPanel formPanel,footer;
+    private JPanel formPanel, footer;
 
-    public Profile(Patient patient){
+    public Profile(Patient patient) {
         load = new JPanel(new BorderLayout());
-        formPanel = new JPanel(new GridLayout(14,2));
+        formPanel = new JPanel(new GridLayout(14, 2));
         lFirstName = new JLabel("First Name: ");
         lLastName = new JLabel("Last Name: ");
         lAge = new JLabel("Age: ");
@@ -49,19 +55,32 @@ public class Profile extends JFrame {
         tBloodGroup = new JFormattedTextField();
         tPatientBalance = new JFormattedTextField(NumberFormat.getIntegerInstance());
 
-        formPanel.add(lFirstName);formPanel.add(tFirstName);
-        formPanel.add(lLastName);formPanel.add(tLastName);
-        formPanel.add(lAge);formPanel.add(tAge);
-        formPanel.add(lGender);formPanel.add(tGender);
-        formPanel.add(lNumber);formPanel.add(tNumber);
-        formPanel.add(lCnic);formPanel.add(tCnic);
-        formPanel.add(lEmail);formPanel.add(tEmail);
-        formPanel.add(lHouseNo);formPanel.add(tHouseNo);
-        formPanel.add(lStreetNo);formPanel.add(tStreetNo);
-        formPanel.add(lArea);formPanel.add(tArea);
-        formPanel.add(lCity);formPanel.add(tCity);
-        formPanel.add(lCountry);formPanel.add(tCountry);
-        formPanel.add(lBloodGroup);formPanel.add(tBloodGroup);
+        formPanel.add(lFirstName);
+        formPanel.add(tFirstName);
+        formPanel.add(lLastName);
+        formPanel.add(tLastName);
+        formPanel.add(lAge);
+        formPanel.add(tAge);
+        formPanel.add(lGender);
+        formPanel.add(tGender);
+        formPanel.add(lNumber);
+        formPanel.add(tNumber);
+        formPanel.add(lCnic);
+        formPanel.add(tCnic);
+        formPanel.add(lEmail);
+        formPanel.add(tEmail);
+        formPanel.add(lHouseNo);
+        formPanel.add(tHouseNo);
+        formPanel.add(lStreetNo);
+        formPanel.add(tStreetNo);
+        formPanel.add(lArea);
+        formPanel.add(tArea);
+        formPanel.add(lCity);
+        formPanel.add(tCity);
+        formPanel.add(lCountry);
+        formPanel.add(tCountry);
+        formPanel.add(lBloodGroup);
+        formPanel.add(tBloodGroup);
         formPanel.add(lPatientBalance);
         formPanel.add(tPatientBalance);
 
@@ -69,16 +88,18 @@ public class Profile extends JFrame {
 
         JScrollPane bar1 = new JScrollPane(formPanel);
 
-        //footer
+        // footer
         updateProfilePatient = new JButton("Update Profile");
         home = new JButton("Home");
-        footer = new JPanel(new GridLayout(1,2));
-        footer.add(updateProfilePatient);footer.add(home);
-//        updateProfilePatient.addActionListener(this);home.addActionListener(this);
-        load.add(footer,BorderLayout.SOUTH);;load.add(bar1,BorderLayout.CENTER);
+        footer = new JPanel(new GridLayout(1, 2));
+        footer.add(updateProfilePatient);
+        footer.add(home);
+        // updateProfilePatient.addActionListener(this);home.addActionListener(this);
+        load.add(footer, BorderLayout.SOUTH);
+        ;
+        load.add(bar1, BorderLayout.CENTER);
 
-
-        //Setting text
+        // Setting text
         tFirstName.setValue(patient.getFirstName());
         tLastName.setValue(patient.getLastName());
         tAge.setValue(patient.getAge());
@@ -94,7 +115,6 @@ public class Profile extends JFrame {
 
         tBloodGroup.setValue(patient.getBloodGroup());
         tPatientBalance.setValue(patient.getBalance());
-
 
         updateProfilePatient.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent e) {
@@ -120,7 +140,7 @@ public class Profile extends JFrame {
     public Profile(Doctor doctor) {
         load = new JPanel(new BorderLayout());
 
-        formPanel = new JPanel(new GridLayout(19,2));
+        formPanel = new JPanel(new GridLayout(19, 2));
 
         lFirstName = new JLabel("First Name: ");
         lLastName = new JLabel("Last Name: ");
@@ -142,7 +162,6 @@ public class Profile extends JFrame {
         lEndTime = new JLabel("End gui.layouts.Time: ");
         lHospitalName = new JLabel("gui.layouts.Hospital Name: ");
 
-
         tFirstName = new JFormattedTextField();
         tLastName = new JFormattedTextField();
         tAge = new JFormattedTextField(NumberFormat.getIntegerInstance());
@@ -163,23 +182,60 @@ public class Profile extends JFrame {
         tEndTime = new JFormattedTextField(DateFormat.getTimeInstance());
         tHospitalName = new JFormattedTextField();
 
-        formPanel.add(lFirstName);formPanel.add(tFirstName);formPanel.add(lLastName);formPanel.add(tLastName);formPanel.add(lAge);formPanel.add(tAge);formPanel.add(lGender);formPanel.add(tGender);formPanel.add(lNumber);formPanel.add(tNumber);formPanel.add(lCnic);formPanel.add(tCnic);formPanel.add(lEmail);formPanel.add(tEmail);formPanel.add(lHouseNo);formPanel.add(tHouseNo);formPanel.add(lStreetNo);formPanel.add(tStreetNo);formPanel.add(lArea);formPanel.add(tArea);formPanel.add(lCity);formPanel.add(tCity);formPanel.add(lCountry);formPanel.add(tCountry);formPanel.add(lSpecialization);formPanel.add(tSpecialization);formPanel.add(lExperience);formPanel.add(tExperience);formPanel.add(lHourlyCharge);formPanel.add(tHourlyCharge);formPanel.add(lDoctorBalance);formPanel.add(tDoctorBalance);formPanel.add(lStartTime);formPanel.add(tStartTime);formPanel.add(lEndTime);formPanel.add(tEndTime);formPanel.add(lHospitalName);formPanel.add(tHospitalName);
+        formPanel.add(lFirstName);
+        formPanel.add(tFirstName);
+        formPanel.add(lLastName);
+        formPanel.add(tLastName);
+        formPanel.add(lAge);
+        formPanel.add(tAge);
+        formPanel.add(lGender);
+        formPanel.add(tGender);
+        formPanel.add(lNumber);
+        formPanel.add(tNumber);
+        formPanel.add(lCnic);
+        formPanel.add(tCnic);
+        formPanel.add(lEmail);
+        formPanel.add(tEmail);
+        formPanel.add(lHouseNo);
+        formPanel.add(tHouseNo);
+        formPanel.add(lStreetNo);
+        formPanel.add(tStreetNo);
+        formPanel.add(lArea);
+        formPanel.add(tArea);
+        formPanel.add(lCity);
+        formPanel.add(tCity);
+        formPanel.add(lCountry);
+        formPanel.add(tCountry);
+        formPanel.add(lSpecialization);
+        formPanel.add(tSpecialization);
+        formPanel.add(lExperience);
+        formPanel.add(tExperience);
+        formPanel.add(lHourlyCharge);
+        formPanel.add(tHourlyCharge);
+        formPanel.add(lDoctorBalance);
+        formPanel.add(tDoctorBalance);
+        formPanel.add(lStartTime);
+        formPanel.add(tStartTime);
+        formPanel.add(lEndTime);
+        formPanel.add(tEndTime);
+        formPanel.add(lHospitalName);
+        formPanel.add(tHospitalName);
 
         load.add(formPanel);
 
         JScrollPane bar1 = new JScrollPane(formPanel);
 
-        //footer
+        // footer
         updateProfileDoctor = new JButton("Update Profile");
         home = new JButton("Home");
-        footer = new JPanel(new GridLayout(1,2));
-        footer.add(updateProfileDoctor);footer.add(home);
-//        updateProfileDoctor.addActionListener(this);home.addActionListener(this);
-        load.add(footer,BorderLayout.SOUTH);load.add(bar1,BorderLayout.CENTER);
+        footer = new JPanel(new GridLayout(1, 2));
+        footer.add(updateProfileDoctor);
+        footer.add(home);
+        // updateProfileDoctor.addActionListener(this);home.addActionListener(this);
+        load.add(footer, BorderLayout.SOUTH);
+        load.add(bar1, BorderLayout.CENTER);
 
-
-
-        //Setting text
+        // Setting text
         tFirstName.setValue(doctor.getFirstName());
         tLastName.setValue(doctor.getLastName());
         tAge.setValue(doctor.getAge());
@@ -225,4 +281,3 @@ public class Profile extends JFrame {
     }
 
 }
-
