@@ -4,16 +4,15 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class HomePage extends JFrame {
+public class HomePage {
     public JPanel load;
     private JLabel titleLabel;
     private JButton loginButton;
     private JButton registerButton;
 
     public HomePage() {
-
         load = new JPanel();
-        load.setBackground(new Color(124,252,0));
+        load.setBackground(new Color(124, 252, 0));
         load.setLayout(null);
 
         titleLabel = new JLabel("Welcome to our App");
