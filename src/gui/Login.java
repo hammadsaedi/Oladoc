@@ -1,4 +1,7 @@
-package gui;
+package gui.layouts;
+
+import gui.customComponents.customButton;
+import gui.customComponents.customField;
 
 import javax.swing.*;
 import java.awt.*;
@@ -8,15 +11,15 @@ import java.awt.event.ActionListener;
 public class Login extends JFrame implements ActionListener {
     public JPanel load;
     private JLabel usernameLabel, passwordLabel;
-    private JTextField usernameField, passwordField;
-    private JButton loginButton, home;
+    private customField usernameField, passwordField;
+    private customButton loginButton, home;
     private JRadioButton doctor, patient, admin;
     private ButtonGroup loginGroup;
 
     public Login() {
 
         load = new JPanel(new BorderLayout());
-        // load.setSize(400,400);
+//        load.setSize(400,400);
 
         // Create a panel to hold the login form components
         JPanel login = new JPanel(new GridLayout(3, 2));
@@ -26,32 +29,32 @@ public class Login extends JFrame implements ActionListener {
         // Add the username label and text field to the panel
         usernameLabel = new JLabel("Username:");
         login.add(usernameLabel);
-        usernameField = new JTextField(20);
+        usernameField = new customField(20);
         login.add(usernameField);
 
         // Add the password label and text field to the panel
         passwordLabel = new JLabel("Password:");
         login.add(passwordLabel);
-        passwordField = new JTextField(20);
+        passwordField = new customField(20);
         login.add(passwordField);
 
         // Add the login button to the panel
-        loginButton = new JButton("Login");
+        loginButton = new customButton("Login");
         loginButton.addActionListener(this);
         login.add(loginButton);
-        home = new JButton("Home");
+        home = new customButton("Home");
         home.addActionListener(this);
         login.add(home);
 
-        // Radio Button Panel
+        //Radio Button Panel
         JPanel option = new JPanel(new GridLayout(1, 3));
 
         loginGroup = new ButtonGroup();
         admin = new JRadioButton("Admin");
         loginGroup.add(admin);
-        doctor = new JRadioButton("Doctor");
+        doctor = new JRadioButton("gui.layouts.Doctor");
         loginGroup.add(doctor);
-        patient = new JRadioButton("Patient");
+        patient = new JRadioButton("gui.layouts.Patient");
         loginGroup.add(patient);
 
         option.add(admin);
@@ -74,7 +77,7 @@ public class Login extends JFrame implements ActionListener {
 
             }
         }
-        // redirect to home frame
+        //redirect to home frame
         else if (e.getActionCommand().equals("Home")) {
 
         }

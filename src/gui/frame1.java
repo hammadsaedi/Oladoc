@@ -1,31 +1,29 @@
-package gui;
-
-// package gui.layouts;
+//package gui.layouts;
 //
-// import javax.swing.*;
-// import java.awt.*;
-// import java.io.IOException;
+//import javax.swing.*;
+//import java.awt.*;
+//import java.io.IOException;
 //
-// public class frame1 extends JFrame {
+//public class frame1 extends JFrame {
 //
-// public frame1() throws IOException {
-// setSize(1366, 768);
-// setLayout(new BorderLayout());
-// setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-// setVisible(true);
+//    public frame1() throws IOException {
+//        setSize(1366, 768);
+//        setLayout(new BorderLayout());
+//        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        setVisible(true);
 //
-// hellow h = new hellow();
-// Login login = new Login();
+//        hellow h = new hellow();
+//        Login login = new Login();
 //
-// add(h.p1,BorderLayout.NORTH);
+//        add(h.p1,BorderLayout.NORTH);
 //
-// Registration r = new Registration();
+//        Registration r = new Registration();
 //
-// add(r.load,BorderLayout.CENTER);
-// }
+//        add(r.load,BorderLayout.CENTER);
+//    }
 //
-// public static void main(String[] args) throws IOException {
-// frame1 f = new frame1();
+//    public static void main(String[] args) throws IOException {
+//        frame1 f = new frame1();
 //
-// }
-// }
+//    }
+//}
