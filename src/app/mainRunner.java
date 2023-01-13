@@ -23,7 +23,7 @@ public class mainRunner {
         frame.setResizable(false);
 
         frame.add(new Header().load, BorderLayout.NORTH);
-        frame.add(new Registration(app).load, BorderLayout.CENTER);
+//        frame.add(new Registration(app).load, BorderLayout.CENTER);
 
         // frame.add(new FeedbackForm().load,BorderLayout.CENTER);
         frame.repaint();

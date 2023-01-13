@@ -14,7 +14,7 @@ public class Time implements Serializable {
     }
 
     public Time(int hour) {
-
+        this.hour = hour;
     }
 
     public int getSecond() {
