@@ -10,10 +10,10 @@ public class BackEndInterface implements Serializable {
     private Database db;
     private FileOperations<Database> op;
 
-    BackEndInterface() {
+    public BackEndInterface() {
     }
 
-    BackEndInterface(String path) {
+    public BackEndInterface(String path) {
         op = new FileOperations<>(path);
         try {
             db = op.seek();
@@ -24,7 +24,7 @@ public class BackEndInterface implements Serializable {
         }
     }
 
-    BackEndInterface(Database db, String path) {
+    public BackEndInterface(Database db, String path) {
         op = new FileOperations<>(path);
         this.db = db;
     }
