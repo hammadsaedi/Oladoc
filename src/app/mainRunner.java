@@ -1,9 +1,9 @@
 package app;
 
-import gui.layouts.FeedbackForm;
-import gui.layouts.Header;
-import gui.layouts.Login;
-import gui.layouts.Registration;
+import gui.FeedbackForm;
+import gui.Header;
+import gui.Login;
+import gui.Registration;
 
 import javax.swing.*;
 import java.awt.*;
@@ -25,12 +25,11 @@ public class mainRunner {
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
 
-        frame.add(new Registration(app).load, BorderLayout.CENTER);
         frame.add(new Header().load, BorderLayout.NORTH);
+        frame.add(new Registration(app).load, BorderLayout.CENTER);
 
         // frame.add(new FeedbackForm().load,BorderLayout.CENTER);
         frame.repaint();
         frame.revalidate();
-
     }
 }

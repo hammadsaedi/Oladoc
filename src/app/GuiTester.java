@@ -1,7 +1,7 @@
 package app;
 
-import gui.layouts.FeedbackForm;
-import gui.layouts.Login;
+import gui.FeedbackForm;
+import gui.Login;
 
 public class GuiTester {
     public static void main(String[] args) {

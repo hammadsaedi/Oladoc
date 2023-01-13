@@ -127,9 +127,11 @@ public class BackEndInterface implements Serializable {
         return patient.getReceipt();
     }
 
-    // Server and Make Recept
-    void servePatient(Appointment appointment) {
-
+    public void payBill(Patient patient, Receipt receipt) {
+        if (receipt.getAmount() > patient.getBalance())
+            throw new RuntimeException("Patient is out of balance");
+        patient.setBalance(patient.getBalance() - receipt.getAmount());
+        receipt.setPaid(true);
     }
 
     // Edit Profile Option
