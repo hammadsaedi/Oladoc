@@ -29,6 +29,10 @@ public class BackEndInterface implements Serializable {
         this.db = db;
     }
 
+    public Person getLoggedInUser() {
+        return person;
+    }
+
     // User Registration
     public void registerDoctor(String id, String password, String firstName, String lastName, int age, String gender,
             String number, String cnic, String email, Address address, String specialization, Timing timing,
@@ -121,6 +125,7 @@ public class BackEndInterface implements Serializable {
         } else {
             appointment.setStatus(status);
         }
+        updateDatabase();
     }
 
     public ArrayList<Receipt> getReceipt(Patient patient) {
@@ -132,6 +137,7 @@ public class BackEndInterface implements Serializable {
             throw new RuntimeException("Patient is out of balance");
         patient.setBalance(patient.getBalance() - receipt.getAmount());
         receipt.setPaid(true);
+        updateDatabase();
     }
 
     // Edit Profile Option
