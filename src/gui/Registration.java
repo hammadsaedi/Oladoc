@@ -24,9 +24,9 @@ public class Registration extends JFrame implements ActionListener {
     private JRadioButton doctor, patient;
     private JPanel option, formPanel, footer;
 
-    private JButton submit, home;
+    private JButton submit;
 
-    public Registration(BackEndInterface app) {
+    public Registration(FrontEnd frontEnd, BackEndInterface app) {
         this.app = app;
 
         load = new JPanel(new BorderLayout());
@@ -101,12 +101,9 @@ public class Registration extends JFrame implements ActionListener {
 
         // footer
         submit = new JButton("Submit");
-        home = new JButton("Home");
-        footer = new JPanel(new GridLayout(1, 2));
+        footer = new JPanel(new FlowLayout());
         footer.add(submit);
-        footer.add(home);
         submit.addActionListener(this);
-        home.addActionListener(this);
 
         load.add(footer, BorderLayout.SOUTH);
         load.add(option, BorderLayout.NORTH);

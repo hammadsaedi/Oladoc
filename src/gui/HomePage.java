@@ -10,7 +10,7 @@ public class HomePage {
     private JButton loginButton;
     private JButton registerButton;
 
-    public HomePage() {
+    public HomePage(FrontEnd frontEnd) {
         load = new JPanel();
         load.setBackground(new Color(124, 252, 0));
         load.setLayout(null);
@@ -30,13 +30,14 @@ public class HomePage {
 
         loginButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                // code to open the login page
+                frontEnd.loadLoginPage();
+                System.out.println("HomePage.HomePage(...).new ActionListener() {...}.actionPerformed()");
             }
         });
 
         registerButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                // code to open the registration page
+                frontEnd.loadRegistrationPage();
             }
         });
     }
