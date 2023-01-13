@@ -92,11 +92,16 @@ public class Doctor extends Person implements SignIn, Serializable {
         this.password = password;
     }
 
+//    @Override
+//    public String toString() {
+//        return super.toString() + "Doctor [Specialization: " + specialization + ", Timing: " + timing + ", Hospital: "
+//                + hospital
+//                + ", Experience: " + experience + ", Hourly Charges: " + hourlyCharges + "]";
+//    }
+
     @Override
     public String toString() {
-        return super.toString() + "Doctor [Specialization: " + specialization + ", Timing: " + timing + ", Hospital: "
-                + hospital
-                + ", Experience: " + experience + ", Hourly Charges: " + hourlyCharges + "]";
+        return getFirstName() + " " + getLastName() + " - " + specialization + " - " + timing.getStart().getHour() + " - " + timing.getEnd().getHour();
     }
 
 }
